@@ -1,0 +1,593 @@
+Start Deterministic Training with seed 42
+Namespace(device='cuda:0', data='/home/p_tf_zy/p_tf_01/TESTAM-main/data/METR-LA', adjdata='/home/p_tf_zy/p_tf_01/TESTAM-main/data/METR-LA/adj_mx.pkl', adjtype='doubletransition', out_dim=1, nhid=32, in_dim=2, num_nodes=207, batch_size=64, dropout=0.2, epochs=100, print_every=50, seed=42, save='/home/p_tf_zy/p_tf_01/TESTAM-main/experiment/METR-LA_TESTAM', expid=1, load_path=None, patience=15, lr_mul=1, n_warmup_steps=4000, quantile=0.7, is_quantile=False, warmup_epoch=0)
+Train the model with 91130 parameters
+start training...
+Iter: 000, Train Loss: 15.7906, Train MAPE: 0.3573, Train RMSE: 18.4201
+Iter: 050, Train Loss: 10.2601, Train MAPE: 0.2941, Train RMSE: 14.9222
+Iter: 100, Train Loss: 7.9964, Train MAPE: 0.2388, Train RMSE: 12.0377
+Iter: 150, Train Loss: 6.4326, Train MAPE: 0.1795, Train RMSE: 10.3460
+Iter: 200, Train Loss: 5.8652, Train MAPE: 0.1574, Train RMSE: 9.9222
+Iter: 250, Train Loss: 5.2296, Train MAPE: 0.1614, Train RMSE: 9.2482
+Iter: 300, Train Loss: 4.9483, Train MAPE: 0.1603, Train RMSE: 9.0320
+Iter: 350, Train Loss: 5.1758, Train MAPE: 0.1778, Train RMSE: 9.9936
+Epoch: 001, Inference Time: 1.0668 secs
+Epoch: 001, Train Loss: 7.0113, Train MAPE: 0.1993, Train RMSE: 10.9816, Valid Loss: 4.2880, Valid MAPE: 0.1313, Valid RMSE: 7.9630, Training Time: 31.1137/epoch
+Iter: 000, Train Loss: 4.3248, Train MAPE: 0.1200, Train RMSE: 8.4205
+Iter: 050, Train Loss: 4.3680, Train MAPE: 0.1363, Train RMSE: 8.4781
+Iter: 100, Train Loss: 4.3764, Train MAPE: 0.1260, Train RMSE: 8.6315
+Iter: 150, Train Loss: 4.6127, Train MAPE: 0.1399, Train RMSE: 8.9597
+Iter: 200, Train Loss: 4.4681, Train MAPE: 0.1361, Train RMSE: 8.8560
+Iter: 250, Train Loss: 4.3146, Train MAPE: 0.1366, Train RMSE: 8.5049
+Iter: 300, Train Loss: 4.3820, Train MAPE: 0.1314, Train RMSE: 8.7844
+Iter: 350, Train Loss: 4.6801, Train MAPE: 0.1519, Train RMSE: 9.2782
+Epoch: 002, Inference Time: 1.0751 secs
+Epoch: 002, Train Loss: 4.4276, Train MAPE: 0.1368, Train RMSE: 8.7813, Valid Loss: 3.9938, Valid MAPE: 0.1252, Valid RMSE: 7.5477, Training Time: 22.7327/epoch
+Iter: 000, Train Loss: 4.5216, Train MAPE: 0.1296, Train RMSE: 8.7147
+Iter: 050, Train Loss: 4.3368, Train MAPE: 0.1370, Train RMSE: 8.7571
+Iter: 100, Train Loss: 3.7714, Train MAPE: 0.1065, Train RMSE: 7.7462
+Iter: 150, Train Loss: 4.0246, Train MAPE: 0.1218, Train RMSE: 8.1162
+Iter: 200, Train Loss: 4.0463, Train MAPE: 0.1218, Train RMSE: 8.1918
+Iter: 250, Train Loss: 3.9415, Train MAPE: 0.1154, Train RMSE: 7.9561
+Iter: 300, Train Loss: 4.4683, Train MAPE: 0.1448, Train RMSE: 8.9196
+Iter: 350, Train Loss: 4.3346, Train MAPE: 0.1370, Train RMSE: 8.7871
+Epoch: 003, Inference Time: 1.0681 secs
+Epoch: 003, Train Loss: 4.2768, Train MAPE: 0.1316, Train RMSE: 8.5394, Valid Loss: 4.0468, Valid MAPE: 0.1304, Valid RMSE: 7.5473, Training Time: 22.6860/epoch
+Iter: 000, Train Loss: 4.4710, Train MAPE: 0.1394, Train RMSE: 8.7239
+Iter: 050, Train Loss: 4.0614, Train MAPE: 0.1111, Train RMSE: 7.8601
+Iter: 100, Train Loss: 4.2596, Train MAPE: 0.1247, Train RMSE: 8.3407
+Iter: 150, Train Loss: 4.0332, Train MAPE: 0.1227, Train RMSE: 7.9572
+Iter: 200, Train Loss: 4.0137, Train MAPE: 0.1236, Train RMSE: 8.0482
+Iter: 250, Train Loss: 4.0834, Train MAPE: 0.1191, Train RMSE: 7.9229
+Iter: 300, Train Loss: 3.9152, Train MAPE: 0.1055, Train RMSE: 7.7504
+Iter: 350, Train Loss: 3.7452, Train MAPE: 0.1072, Train RMSE: 7.4417
+Epoch: 004, Inference Time: 1.0695 secs
+Epoch: 004, Train Loss: 4.1173, Train MAPE: 0.1239, Train RMSE: 8.1729, Valid Loss: 3.9572, Valid MAPE: 0.1191, Valid RMSE: 7.2586, Training Time: 22.6955/epoch
+Iter: 000, Train Loss: 3.9107, Train MAPE: 0.1192, Train RMSE: 8.0381
+Iter: 050, Train Loss: 3.6776, Train MAPE: 0.1008, Train RMSE: 7.3513
+Iter: 100, Train Loss: 3.8931, Train MAPE: 0.1120, Train RMSE: 7.7532
+Iter: 150, Train Loss: 3.4481, Train MAPE: 0.0923, Train RMSE: 6.8041
+Iter: 200, Train Loss: 3.7510, Train MAPE: 0.1018, Train RMSE: 7.4126
+Iter: 250, Train Loss: 3.9861, Train MAPE: 0.1199, Train RMSE: 7.9357
+Iter: 300, Train Loss: 4.1001, Train MAPE: 0.1164, Train RMSE: 8.0750
+Iter: 350, Train Loss: 3.9164, Train MAPE: 0.1160, Train RMSE: 7.9314
+Epoch: 005, Inference Time: 1.0818 secs
+Epoch: 005, Train Loss: 3.8731, Train MAPE: 0.1140, Train RMSE: 7.6965, Valid Loss: 3.6534, Valid MAPE: 0.1086, Valid RMSE: 6.8740, Training Time: 22.7493/epoch
+Iter: 000, Train Loss: 3.8448, Train MAPE: 0.1134, Train RMSE: 7.4557
+Iter: 050, Train Loss: 3.9637, Train MAPE: 0.1174, Train RMSE: 7.8816
+Iter: 100, Train Loss: 3.4157, Train MAPE: 0.0884, Train RMSE: 6.9217
+Iter: 150, Train Loss: 3.9018, Train MAPE: 0.1255, Train RMSE: 7.7361
+Iter: 200, Train Loss: 3.7141, Train MAPE: 0.1079, Train RMSE: 7.3010
+Iter: 250, Train Loss: 3.8004, Train MAPE: 0.1114, Train RMSE: 7.6195
+Iter: 300, Train Loss: 3.4478, Train MAPE: 0.0904, Train RMSE: 6.6831
+Iter: 350, Train Loss: 3.2881, Train MAPE: 0.0848, Train RMSE: 6.5663
+Epoch: 006, Inference Time: 1.0657 secs
+Epoch: 006, Train Loss: 3.7250, Train MAPE: 0.1089, Train RMSE: 7.4391, Valid Loss: 3.6311, Valid MAPE: 0.1167, Valid RMSE: 6.8018, Training Time: 22.7217/epoch
+Iter: 000, Train Loss: 3.4006, Train MAPE: 0.1029, Train RMSE: 7.0580
+Iter: 050, Train Loss: 4.1162, Train MAPE: 0.1299, Train RMSE: 8.0955
+Iter: 100, Train Loss: 3.5240, Train MAPE: 0.0930, Train RMSE: 6.8426
+Iter: 150, Train Loss: 3.4385, Train MAPE: 0.1005, Train RMSE: 6.9391
+Iter: 200, Train Loss: 3.5791, Train MAPE: 0.1107, Train RMSE: 7.4442
+Iter: 250, Train Loss: 3.5399, Train MAPE: 0.0934, Train RMSE: 6.7017
+Iter: 300, Train Loss: 3.6984, Train MAPE: 0.1037, Train RMSE: 7.1995
+Iter: 350, Train Loss: 3.5129, Train MAPE: 0.0984, Train RMSE: 6.8180
+Epoch: 007, Inference Time: 1.0658 secs
+Epoch: 007, Train Loss: 3.5802, Train MAPE: 0.1036, Train RMSE: 7.1071, Valid Loss: 3.2589, Valid MAPE: 0.0941, Valid RMSE: 6.2619, Training Time: 22.7034/epoch
+Iter: 000, Train Loss: 3.6226, Train MAPE: 0.0916, Train RMSE: 6.9821
+Iter: 050, Train Loss: 3.4265, Train MAPE: 0.0931, Train RMSE: 6.7505
+Iter: 100, Train Loss: 3.3160, Train MAPE: 0.0922, Train RMSE: 6.3843
+Iter: 150, Train Loss: 3.4900, Train MAPE: 0.1021, Train RMSE: 6.8613
+Iter: 200, Train Loss: 3.2656, Train MAPE: 0.0888, Train RMSE: 6.4927
+Iter: 250, Train Loss: 3.3667, Train MAPE: 0.1018, Train RMSE: 6.7565
+Iter: 300, Train Loss: 3.2398, Train MAPE: 0.0836, Train RMSE: 6.4448
+Iter: 350, Train Loss: 3.6505, Train MAPE: 0.1115, Train RMSE: 7.1339
+Epoch: 008, Inference Time: 1.0720 secs
+Epoch: 008, Train Loss: 3.4269, Train MAPE: 0.0971, Train RMSE: 6.7324, Valid Loss: 3.2562, Valid MAPE: 0.0945, Valid RMSE: 6.0377, Training Time: 22.7916/epoch
+Iter: 000, Train Loss: 3.1247, Train MAPE: 0.0863, Train RMSE: 6.0634
+Iter: 050, Train Loss: 3.4155, Train MAPE: 0.0900, Train RMSE: 6.6567
+Iter: 100, Train Loss: 3.4325, Train MAPE: 0.0941, Train RMSE: 6.7851
+Iter: 150, Train Loss: 3.2276, Train MAPE: 0.0936, Train RMSE: 6.4303
+Iter: 200, Train Loss: 3.3152, Train MAPE: 0.0883, Train RMSE: 6.2004
+Iter: 250, Train Loss: 3.6968, Train MAPE: 0.1106, Train RMSE: 7.1760
+Iter: 300, Train Loss: 3.2145, Train MAPE: 0.0885, Train RMSE: 6.4060
+Iter: 350, Train Loss: 2.9708, Train MAPE: 0.0798, Train RMSE: 5.9132
+Epoch: 009, Inference Time: 1.0674 secs
+Epoch: 009, Train Loss: 3.3474, Train MAPE: 0.0944, Train RMSE: 6.5897, Valid Loss: 3.3070, Valid MAPE: 0.0908, Valid RMSE: 6.0317, Training Time: 22.8496/epoch
+Iter: 000, Train Loss: 3.1547, Train MAPE: 0.0868, Train RMSE: 6.3659
+Iter: 050, Train Loss: 3.3067, Train MAPE: 0.0903, Train RMSE: 6.5246
+Iter: 100, Train Loss: 3.3145, Train MAPE: 0.0981, Train RMSE: 6.5765
+Iter: 150, Train Loss: 3.4651, Train MAPE: 0.0909, Train RMSE: 6.3204
+Iter: 200, Train Loss: 3.3297, Train MAPE: 0.0946, Train RMSE: 6.6295
+Iter: 250, Train Loss: 3.5813, Train MAPE: 0.1023, Train RMSE: 7.0098
+Iter: 300, Train Loss: 3.3760, Train MAPE: 0.0920, Train RMSE: 6.8951
+Iter: 350, Train Loss: 3.3039, Train MAPE: 0.0882, Train RMSE: 6.4932
+Epoch: 010, Inference Time: 1.0675 secs
+Epoch: 010, Train Loss: 3.3161, Train MAPE: 0.0933, Train RMSE: 6.5165, Valid Loss: 3.2237, Valid MAPE: 0.0911, Valid RMSE: 5.9797, Training Time: 22.7116/epoch
+Iter: 000, Train Loss: 3.3370, Train MAPE: 0.0952, Train RMSE: 6.6359
+Iter: 050, Train Loss: 3.2150, Train MAPE: 0.0938, Train RMSE: 6.3429
+Iter: 100, Train Loss: 3.2404, Train MAPE: 0.0871, Train RMSE: 6.2924
+Iter: 150, Train Loss: 3.1546, Train MAPE: 0.0872, Train RMSE: 6.2041
+Iter: 200, Train Loss: 2.9160, Train MAPE: 0.0728, Train RMSE: 5.8356
+Iter: 250, Train Loss: 3.2159, Train MAPE: 0.0939, Train RMSE: 6.2523
+Iter: 300, Train Loss: 3.3442, Train MAPE: 0.0998, Train RMSE: 6.6033
+Iter: 350, Train Loss: 3.6583, Train MAPE: 0.0973, Train RMSE: 6.9760
+Epoch: 011, Inference Time: 1.0584 secs
+Epoch: 011, Train Loss: 3.3104, Train MAPE: 0.0929, Train RMSE: 6.5001, Valid Loss: 3.1653, Valid MAPE: 0.0911, Valid RMSE: 5.8313, Training Time: 22.7296/epoch
+Iter: 000, Train Loss: 3.5118, Train MAPE: 0.1008, Train RMSE: 6.8294
+Iter: 050, Train Loss: 3.4949, Train MAPE: 0.1051, Train RMSE: 6.6674
+Iter: 100, Train Loss: 3.4776, Train MAPE: 0.0971, Train RMSE: 6.6065
+Iter: 150, Train Loss: 3.0562, Train MAPE: 0.0793, Train RMSE: 5.9865
+Iter: 200, Train Loss: 3.1766, Train MAPE: 0.0852, Train RMSE: 6.2226
+Iter: 250, Train Loss: 3.3258, Train MAPE: 0.0979, Train RMSE: 6.3517
+Iter: 300, Train Loss: 3.5417, Train MAPE: 0.1033, Train RMSE: 6.9649
+Iter: 350, Train Loss: 3.2968, Train MAPE: 0.0778, Train RMSE: 5.6115
+Epoch: 012, Inference Time: 1.0739 secs
+Epoch: 012, Train Loss: 3.3533, Train MAPE: 0.0943, Train RMSE: 6.5364, Valid Loss: 3.0196, Valid MAPE: 0.0849, Valid RMSE: 5.7187, Training Time: 22.7396/epoch
+Iter: 000, Train Loss: 3.3086, Train MAPE: 0.0851, Train RMSE: 6.4108
+Iter: 050, Train Loss: 3.4889, Train MAPE: 0.1041, Train RMSE: 7.0441
+Iter: 100, Train Loss: 3.3839, Train MAPE: 0.0985, Train RMSE: 6.6961
+Iter: 150, Train Loss: 3.3549, Train MAPE: 0.0938, Train RMSE: 6.4795
+Iter: 200, Train Loss: 3.2558, Train MAPE: 0.0855, Train RMSE: 6.1908
+Iter: 250, Train Loss: 3.1281, Train MAPE: 0.0816, Train RMSE: 6.0263
+Iter: 300, Train Loss: 3.2374, Train MAPE: 0.0783, Train RMSE: 5.9606
+Iter: 350, Train Loss: 3.0456, Train MAPE: 0.0782, Train RMSE: 5.8820
+Epoch: 013, Inference Time: 1.0584 secs
+Epoch: 013, Train Loss: 3.2878, Train MAPE: 0.0921, Train RMSE: 6.4431, Valid Loss: 3.0286, Valid MAPE: 0.0863, Valid RMSE: 5.6995, Training Time: 22.7644/epoch
+Iter: 000, Train Loss: 2.8744, Train MAPE: 0.0764, Train RMSE: 5.6631
+Iter: 050, Train Loss: 3.1614, Train MAPE: 0.0896, Train RMSE: 6.2704
+Iter: 100, Train Loss: 3.0920, Train MAPE: 0.0840, Train RMSE: 6.0356
+Iter: 150, Train Loss: 2.9943, Train MAPE: 0.0728, Train RMSE: 5.7169
+Iter: 200, Train Loss: 3.4551, Train MAPE: 0.0931, Train RMSE: 6.8419
+Iter: 250, Train Loss: 3.3406, Train MAPE: 0.0990, Train RMSE: 6.7233
+Iter: 300, Train Loss: 3.2313, Train MAPE: 0.0886, Train RMSE: 6.4127
+Iter: 350, Train Loss: 2.9213, Train MAPE: 0.0767, Train RMSE: 5.7011
+Epoch: 014, Inference Time: 1.0809 secs
+Epoch: 014, Train Loss: 3.1983, Train MAPE: 0.0891, Train RMSE: 6.3161, Valid Loss: 2.9652, Valid MAPE: 0.0874, Valid RMSE: 5.6891, Training Time: 22.6958/epoch
+Iter: 000, Train Loss: 3.0076, Train MAPE: 0.0834, Train RMSE: 5.9177
+Iter: 050, Train Loss: 3.0300, Train MAPE: 0.0834, Train RMSE: 6.0324
+Iter: 100, Train Loss: 3.2040, Train MAPE: 0.0911, Train RMSE: 6.4468
+Iter: 150, Train Loss: 3.2530, Train MAPE: 0.0921, Train RMSE: 6.5457
+Iter: 200, Train Loss: 3.0398, Train MAPE: 0.0855, Train RMSE: 5.9405
+Iter: 250, Train Loss: 2.9592, Train MAPE: 0.0758, Train RMSE: 5.8712
+Iter: 300, Train Loss: 2.8340, Train MAPE: 0.0708, Train RMSE: 5.5736
+Iter: 350, Train Loss: 3.3705, Train MAPE: 0.1015, Train RMSE: 6.9268
+Epoch: 015, Inference Time: 1.0770 secs
+Epoch: 015, Train Loss: 3.1325, Train MAPE: 0.0871, Train RMSE: 6.2227, Valid Loss: 2.9306, Valid MAPE: 0.0830, Valid RMSE: 5.6307, Training Time: 22.7162/epoch
+Iter: 000, Train Loss: 3.3748, Train MAPE: 0.0984, Train RMSE: 6.7584
+Iter: 050, Train Loss: 2.9544, Train MAPE: 0.0767, Train RMSE: 5.7463
+Iter: 100, Train Loss: 2.9847, Train MAPE: 0.0821, Train RMSE: 6.0355
+Iter: 150, Train Loss: 3.3865, Train MAPE: 0.0961, Train RMSE: 6.8025
+Iter: 200, Train Loss: 3.3734, Train MAPE: 0.0980, Train RMSE: 6.7832
+Iter: 250, Train Loss: 3.1765, Train MAPE: 0.0911, Train RMSE: 6.3648
+Iter: 300, Train Loss: 2.9493, Train MAPE: 0.0779, Train RMSE: 5.9564
+Iter: 350, Train Loss: 2.9490, Train MAPE: 0.0793, Train RMSE: 6.0494
+Epoch: 016, Inference Time: 1.0590 secs
+Epoch: 016, Train Loss: 3.0952, Train MAPE: 0.0858, Train RMSE: 6.1654, Valid Loss: 2.9317, Valid MAPE: 0.0825, Valid RMSE: 5.6093, Training Time: 22.7119/epoch
+Iter: 000, Train Loss: 2.8545, Train MAPE: 0.0730, Train RMSE: 5.7700
+Iter: 050, Train Loss: 2.7122, Train MAPE: 0.0695, Train RMSE: 5.5411
+Iter: 100, Train Loss: 3.1763, Train MAPE: 0.1015, Train RMSE: 6.5643
+Iter: 150, Train Loss: 3.0760, Train MAPE: 0.0931, Train RMSE: 6.0912
+Iter: 200, Train Loss: 2.9466, Train MAPE: 0.0757, Train RMSE: 5.7861
+Iter: 250, Train Loss: 3.3298, Train MAPE: 0.0977, Train RMSE: 6.7479
+Iter: 300, Train Loss: 2.9450, Train MAPE: 0.0764, Train RMSE: 5.5959
+Iter: 350, Train Loss: 3.1662, Train MAPE: 0.0861, Train RMSE: 6.3424
+Epoch: 017, Inference Time: 1.0797 secs
+Epoch: 017, Train Loss: 3.0536, Train MAPE: 0.0845, Train RMSE: 6.1006, Valid Loss: 2.8990, Valid MAPE: 0.0819, Valid RMSE: 5.5516, Training Time: 22.6887/epoch
+Iter: 000, Train Loss: 3.1736, Train MAPE: 0.0947, Train RMSE: 6.5107
+Iter: 050, Train Loss: 3.0455, Train MAPE: 0.0846, Train RMSE: 6.0243
+Iter: 100, Train Loss: 3.0413, Train MAPE: 0.0803, Train RMSE: 6.0682
+Iter: 150, Train Loss: 3.6234, Train MAPE: 0.1072, Train RMSE: 7.0795
+Iter: 200, Train Loss: 3.3545, Train MAPE: 0.0968, Train RMSE: 6.5551
+Iter: 250, Train Loss: 2.8364, Train MAPE: 0.0745, Train RMSE: 5.5956
+Iter: 300, Train Loss: 2.9993, Train MAPE: 0.0745, Train RMSE: 5.6852
+Iter: 350, Train Loss: 3.0099, Train MAPE: 0.0823, Train RMSE: 5.8840
+Epoch: 018, Inference Time: 1.0767 secs
+Epoch: 018, Train Loss: 3.0214, Train MAPE: 0.0833, Train RMSE: 6.0495, Valid Loss: 2.9278, Valid MAPE: 0.0820, Valid RMSE: 5.5990, Training Time: 22.7349/epoch
+Iter: 000, Train Loss: 3.2039, Train MAPE: 0.0887, Train RMSE: 6.1655
+Iter: 050, Train Loss: 2.9310, Train MAPE: 0.0806, Train RMSE: 5.8403
+Iter: 100, Train Loss: 2.8710, Train MAPE: 0.0795, Train RMSE: 5.8049
+Iter: 150, Train Loss: 2.8438, Train MAPE: 0.0742, Train RMSE: 5.7483
+Iter: 200, Train Loss: 3.1074, Train MAPE: 0.0909, Train RMSE: 6.3033
+Iter: 250, Train Loss: 2.8199, Train MAPE: 0.0720, Train RMSE: 5.4583
+Iter: 300, Train Loss: 3.0426, Train MAPE: 0.0818, Train RMSE: 6.0606
+Iter: 350, Train Loss: 2.7257, Train MAPE: 0.0652, Train RMSE: 5.3199
+Epoch: 019, Inference Time: 1.0627 secs
+Epoch: 019, Train Loss: 2.9977, Train MAPE: 0.0825, Train RMSE: 6.0083, Valid Loss: 2.8680, Valid MAPE: 0.0807, Valid RMSE: 5.5437, Training Time: 22.7439/epoch
+Iter: 000, Train Loss: 2.7684, Train MAPE: 0.0753, Train RMSE: 5.6674
+Iter: 050, Train Loss: 2.9720, Train MAPE: 0.0806, Train RMSE: 5.7618
+Iter: 100, Train Loss: 2.8731, Train MAPE: 0.0764, Train RMSE: 5.7730
+Iter: 150, Train Loss: 3.0584, Train MAPE: 0.0884, Train RMSE: 6.1969
+Iter: 200, Train Loss: 2.9977, Train MAPE: 0.0837, Train RMSE: 5.8421
+Iter: 250, Train Loss: 2.8971, Train MAPE: 0.0809, Train RMSE: 5.8756
+Iter: 300, Train Loss: 3.1935, Train MAPE: 0.0944, Train RMSE: 6.5048
+Iter: 350, Train Loss: 2.9269, Train MAPE: 0.0779, Train RMSE: 5.7514
+Epoch: 020, Inference Time: 1.0706 secs
+Epoch: 020, Train Loss: 2.9757, Train MAPE: 0.0817, Train RMSE: 5.9696, Valid Loss: 2.8513, Valid MAPE: 0.0799, Valid RMSE: 5.5053, Training Time: 22.7098/epoch
+Iter: 000, Train Loss: 2.9877, Train MAPE: 0.0804, Train RMSE: 5.9210
+Iter: 050, Train Loss: 2.8790, Train MAPE: 0.0760, Train RMSE: 5.7137
+Iter: 100, Train Loss: 2.8631, Train MAPE: 0.0728, Train RMSE: 5.7020
+Iter: 150, Train Loss: 2.9719, Train MAPE: 0.0815, Train RMSE: 5.7229
+Iter: 200, Train Loss: 3.0793, Train MAPE: 0.0853, Train RMSE: 6.0655
+Iter: 250, Train Loss: 2.7657, Train MAPE: 0.0758, Train RMSE: 5.5409
+Iter: 300, Train Loss: 3.1417, Train MAPE: 0.0859, Train RMSE: 6.3077
+Iter: 350, Train Loss: 2.9808, Train MAPE: 0.0829, Train RMSE: 6.0881
+Epoch: 021, Inference Time: 1.0817 secs
+Epoch: 021, Train Loss: 2.9642, Train MAPE: 0.0814, Train RMSE: 5.9481, Valid Loss: 2.8460, Valid MAPE: 0.0799, Valid RMSE: 5.5030, Training Time: 22.7288/epoch
+Iter: 000, Train Loss: 3.0654, Train MAPE: 0.0854, Train RMSE: 6.1037
+Iter: 050, Train Loss: 2.7908, Train MAPE: 0.0758, Train RMSE: 5.7212
+Iter: 100, Train Loss: 2.8209, Train MAPE: 0.0718, Train RMSE: 5.6102
+Iter: 150, Train Loss: 3.1457, Train MAPE: 0.0897, Train RMSE: 6.2973
+Iter: 200, Train Loss: 3.0222, Train MAPE: 0.0819, Train RMSE: 5.9791
+Iter: 250, Train Loss: 3.1476, Train MAPE: 0.0853, Train RMSE: 6.1328
+Iter: 300, Train Loss: 3.1047, Train MAPE: 0.0801, Train RMSE: 6.1078
+Iter: 350, Train Loss: 3.1232, Train MAPE: 0.0813, Train RMSE: 6.0554
+Epoch: 022, Inference Time: 1.0641 secs
+Epoch: 022, Train Loss: 3.0872, Train MAPE: 0.0852, Train RMSE: 6.1352, Valid Loss: 2.9648, Valid MAPE: 0.0860, Valid RMSE: 5.7295, Training Time: 22.7162/epoch
+Iter: 000, Train Loss: 2.9491, Train MAPE: 0.0826, Train RMSE: 5.8590
+Iter: 050, Train Loss: 3.1785, Train MAPE: 0.0945, Train RMSE: 6.2988
+Iter: 100, Train Loss: 2.9413, Train MAPE: 0.0832, Train RMSE: 5.9915
+Iter: 150, Train Loss: 2.9102, Train MAPE: 0.0753, Train RMSE: 5.7706
+Iter: 200, Train Loss: 3.0625, Train MAPE: 0.0802, Train RMSE: 5.9592
+Iter: 250, Train Loss: 3.4094, Train MAPE: 0.0935, Train RMSE: 6.7835
+Iter: 300, Train Loss: 3.0373, Train MAPE: 0.0790, Train RMSE: 6.0750
+Iter: 350, Train Loss: 2.8690, Train MAPE: 0.0781, Train RMSE: 5.7940
+Epoch: 023, Inference Time: 1.0646 secs
+Epoch: 023, Train Loss: 3.1053, Train MAPE: 0.0857, Train RMSE: 6.1627, Valid Loss: 2.9240, Valid MAPE: 0.0826, Valid RMSE: 5.5862, Training Time: 22.6979/epoch
+Iter: 000, Train Loss: 3.0426, Train MAPE: 0.0824, Train RMSE: 6.1154
+Iter: 050, Train Loss: 2.9911, Train MAPE: 0.0809, Train RMSE: 5.8288
+Iter: 100, Train Loss: 3.0192, Train MAPE: 0.0835, Train RMSE: 6.0981
+Iter: 150, Train Loss: 2.9805, Train MAPE: 0.0825, Train RMSE: 5.8658
+Iter: 200, Train Loss: 2.9998, Train MAPE: 0.0733, Train RMSE: 5.6568
+Iter: 250, Train Loss: 3.1241, Train MAPE: 0.0850, Train RMSE: 6.0221
+Iter: 300, Train Loss: 3.2467, Train MAPE: 0.0965, Train RMSE: 6.5415
+Iter: 350, Train Loss: 3.0170, Train MAPE: 0.0865, Train RMSE: 6.0483
+Epoch: 024, Inference Time: 1.0769 secs
+Epoch: 024, Train Loss: 3.0833, Train MAPE: 0.0851, Train RMSE: 6.1337, Valid Loss: 2.9839, Valid MAPE: 0.0848, Valid RMSE: 5.7144, Training Time: 22.7507/epoch
+Iter: 000, Train Loss: 3.1625, Train MAPE: 0.0877, Train RMSE: 6.3265
+Iter: 050, Train Loss: 3.0840, Train MAPE: 0.0816, Train RMSE: 6.0411
+Iter: 100, Train Loss: 3.1681, Train MAPE: 0.0887, Train RMSE: 6.4279
+Iter: 150, Train Loss: 3.1140, Train MAPE: 0.0808, Train RMSE: 6.0759
+Iter: 200, Train Loss: 2.8229, Train MAPE: 0.0743, Train RMSE: 5.7789
+Iter: 250, Train Loss: 3.1054, Train MAPE: 0.0905, Train RMSE: 6.4567
+Iter: 300, Train Loss: 3.0392, Train MAPE: 0.0811, Train RMSE: 6.0475
+Iter: 350, Train Loss: 3.1680, Train MAPE: 0.0906, Train RMSE: 6.3910
+Epoch: 025, Inference Time: 1.0646 secs
+Epoch: 025, Train Loss: 3.0473, Train MAPE: 0.0838, Train RMSE: 6.0739, Valid Loss: 2.9930, Valid MAPE: 0.0811, Valid RMSE: 5.6637, Training Time: 22.7235/epoch
+Iter: 000, Train Loss: 3.2022, Train MAPE: 0.0852, Train RMSE: 6.3705
+Iter: 050, Train Loss: 3.0638, Train MAPE: 0.0793, Train RMSE: 6.1058
+Iter: 100, Train Loss: 3.1208, Train MAPE: 0.0787, Train RMSE: 6.2284
+Iter: 150, Train Loss: 3.0398, Train MAPE: 0.0838, Train RMSE: 5.9727
+Iter: 200, Train Loss: 3.0372, Train MAPE: 0.0871, Train RMSE: 5.9646
+Iter: 250, Train Loss: 2.9905, Train MAPE: 0.0838, Train RMSE: 6.0138
+Iter: 300, Train Loss: 3.1150, Train MAPE: 0.0856, Train RMSE: 6.1659
+Iter: 350, Train Loss: 3.0774, Train MAPE: 0.0896, Train RMSE: 6.2610
+Epoch: 026, Inference Time: 1.0726 secs
+Epoch: 026, Train Loss: 3.0194, Train MAPE: 0.0830, Train RMSE: 6.0345, Valid Loss: 2.8660, Valid MAPE: 0.0810, Valid RMSE: 5.5632, Training Time: 22.6950/epoch
+Iter: 000, Train Loss: 2.8649, Train MAPE: 0.0760, Train RMSE: 5.6235
+Iter: 050, Train Loss: 3.1006, Train MAPE: 0.0939, Train RMSE: 6.2074
+Iter: 100, Train Loss: 3.0040, Train MAPE: 0.0826, Train RMSE: 5.8718
+Iter: 150, Train Loss: 3.0410, Train MAPE: 0.0880, Train RMSE: 6.3709
+Iter: 200, Train Loss: 3.0118, Train MAPE: 0.0828, Train RMSE: 6.0362
+Iter: 250, Train Loss: 3.0775, Train MAPE: 0.0794, Train RMSE: 6.0382
+Iter: 300, Train Loss: 2.8732, Train MAPE: 0.0767, Train RMSE: 5.7936
+Iter: 350, Train Loss: 3.0614, Train MAPE: 0.0865, Train RMSE: 6.1736
+Epoch: 027, Inference Time: 1.0768 secs
+Epoch: 027, Train Loss: 2.9867, Train MAPE: 0.0818, Train RMSE: 5.9794, Valid Loss: 2.8559, Valid MAPE: 0.0798, Valid RMSE: 5.5201, Training Time: 22.7354/epoch
+Iter: 000, Train Loss: 3.1348, Train MAPE: 0.0880, Train RMSE: 6.2708
+Iter: 050, Train Loss: 3.0522, Train MAPE: 0.0835, Train RMSE: 6.1512
+Iter: 100, Train Loss: 2.7445, Train MAPE: 0.0710, Train RMSE: 5.6669
+Iter: 150, Train Loss: 3.1256, Train MAPE: 0.0892, Train RMSE: 6.3077
+Iter: 200, Train Loss: 3.2543, Train MAPE: 0.0999, Train RMSE: 6.6534
+Iter: 250, Train Loss: 2.8907, Train MAPE: 0.0770, Train RMSE: 5.7088
+Iter: 300, Train Loss: 3.1466, Train MAPE: 0.0903, Train RMSE: 6.2381
+Iter: 350, Train Loss: 2.7775, Train MAPE: 0.0703, Train RMSE: 5.6256
+Epoch: 028, Inference Time: 1.0652 secs
+Epoch: 028, Train Loss: 2.9624, Train MAPE: 0.0809, Train RMSE: 5.9330, Valid Loss: 2.8476, Valid MAPE: 0.0806, Valid RMSE: 5.4912, Training Time: 22.6942/epoch
+Iter: 000, Train Loss: 3.2074, Train MAPE: 0.0910, Train RMSE: 6.4749
+Iter: 050, Train Loss: 2.6949, Train MAPE: 0.0756, Train RMSE: 5.5867
+Iter: 100, Train Loss: 2.7312, Train MAPE: 0.0785, Train RMSE: 5.5579
+Iter: 150, Train Loss: 2.9714, Train MAPE: 0.0769, Train RMSE: 5.7834
+Iter: 200, Train Loss: 2.8662, Train MAPE: 0.0764, Train RMSE: 5.7990
+Iter: 250, Train Loss: 2.6238, Train MAPE: 0.0664, Train RMSE: 5.3012
+Iter: 300, Train Loss: 2.9648, Train MAPE: 0.0827, Train RMSE: 5.9249
+Iter: 350, Train Loss: 2.8997, Train MAPE: 0.0760, Train RMSE: 5.6763
+Epoch: 029, Inference Time: 1.0618 secs
+Epoch: 029, Train Loss: 2.9400, Train MAPE: 0.0802, Train RMSE: 5.8919, Valid Loss: 2.8343, Valid MAPE: 0.0798, Valid RMSE: 5.5021, Training Time: 22.7181/epoch
+Iter: 000, Train Loss: 2.9064, Train MAPE: 0.0762, Train RMSE: 5.6665
+Iter: 050, Train Loss: 3.0424, Train MAPE: 0.0879, Train RMSE: 6.1462
+Iter: 100, Train Loss: 2.8506, Train MAPE: 0.0781, Train RMSE: 5.6352
+Iter: 150, Train Loss: 3.0472, Train MAPE: 0.0898, Train RMSE: 6.3406
+Iter: 200, Train Loss: 3.0271, Train MAPE: 0.0859, Train RMSE: 6.0836
+Iter: 250, Train Loss: 2.7256, Train MAPE: 0.0698, Train RMSE: 5.4826
+Iter: 300, Train Loss: 2.8238, Train MAPE: 0.0682, Train RMSE: 5.5146
+Iter: 350, Train Loss: 3.1205, Train MAPE: 0.0840, Train RMSE: 6.1640
+Epoch: 030, Inference Time: 1.0783 secs
+Epoch: 030, Train Loss: 2.9194, Train MAPE: 0.0794, Train RMSE: 5.8504, Valid Loss: 2.8245, Valid MAPE: 0.0789, Valid RMSE: 5.4767, Training Time: 22.7375/epoch
+Iter: 000, Train Loss: 3.0862, Train MAPE: 0.0883, Train RMSE: 6.3444
+Iter: 050, Train Loss: 3.1150, Train MAPE: 0.0907, Train RMSE: 6.3796
+Iter: 100, Train Loss: 2.9751, Train MAPE: 0.0827, Train RMSE: 6.0823
+Iter: 150, Train Loss: 2.7208, Train MAPE: 0.0697, Train RMSE: 5.3753
+Iter: 200, Train Loss: 2.6908, Train MAPE: 0.0678, Train RMSE: 5.4583
+Iter: 250, Train Loss: 2.7660, Train MAPE: 0.0762, Train RMSE: 5.7046
+Iter: 300, Train Loss: 2.8436, Train MAPE: 0.0786, Train RMSE: 5.7291
+Iter: 350, Train Loss: 3.0549, Train MAPE: 0.0880, Train RMSE: 6.1999
+Epoch: 031, Inference Time: 1.0639 secs
+Epoch: 031, Train Loss: 2.9047, Train MAPE: 0.0789, Train RMSE: 5.8212, Valid Loss: 2.8308, Valid MAPE: 0.0782, Valid RMSE: 5.4858, Training Time: 22.7002/epoch
+Iter: 000, Train Loss: 2.9531, Train MAPE: 0.0769, Train RMSE: 5.6664
+Iter: 050, Train Loss: 2.7024, Train MAPE: 0.0691, Train RMSE: 5.3136
+Iter: 100, Train Loss: 2.8766, Train MAPE: 0.0778, Train RMSE: 5.7789
+Iter: 150, Train Loss: 2.8482, Train MAPE: 0.0751, Train RMSE: 5.7820
+Iter: 200, Train Loss: 2.7239, Train MAPE: 0.0679, Train RMSE: 5.4041
+Iter: 250, Train Loss: 2.8729, Train MAPE: 0.0807, Train RMSE: 5.8798
+Iter: 300, Train Loss: 2.8381, Train MAPE: 0.0773, Train RMSE: 5.8144
+Iter: 350, Train Loss: 3.0493, Train MAPE: 0.0894, Train RMSE: 6.3776
+Epoch: 032, Inference Time: 1.0738 secs
+Epoch: 032, Train Loss: 2.8969, Train MAPE: 0.0786, Train RMSE: 5.8077, Valid Loss: 2.9754, Valid MAPE: 0.0784, Valid RMSE: 5.6789, Training Time: 22.6960/epoch
+Iter: 000, Train Loss: 3.3207, Train MAPE: 0.0904, Train RMSE: 6.6344
+Iter: 050, Train Loss: 3.2692, Train MAPE: 0.0928, Train RMSE: 6.5659
+Iter: 100, Train Loss: 3.3555, Train MAPE: 0.0916, Train RMSE: 6.4176
+Iter: 150, Train Loss: 2.8086, Train MAPE: 0.0704, Train RMSE: 5.5144
+Iter: 200, Train Loss: 3.1914, Train MAPE: 0.0831, Train RMSE: 6.0642
+Iter: 250, Train Loss: 2.9554, Train MAPE: 0.0844, Train RMSE: 6.0683
+Iter: 300, Train Loss: 2.8779, Train MAPE: 0.0759, Train RMSE: 5.6963
+Iter: 350, Train Loss: 2.9887, Train MAPE: 0.0788, Train RMSE: 5.8709
+Epoch: 033, Inference Time: 1.0734 secs
+Epoch: 033, Train Loss: 3.0546, Train MAPE: 0.0837, Train RMSE: 6.0706, Valid Loss: 2.8909, Valid MAPE: 0.0794, Valid RMSE: 5.5478, Training Time: 22.8067/epoch
+Iter: 000, Train Loss: 3.2448, Train MAPE: 0.0936, Train RMSE: 6.2956
+Iter: 050, Train Loss: 2.9771, Train MAPE: 0.0847, Train RMSE: 6.1183
+Iter: 100, Train Loss: 3.0320, Train MAPE: 0.0853, Train RMSE: 5.9729
+Iter: 150, Train Loss: 3.3326, Train MAPE: 0.1008, Train RMSE: 6.7221
+Iter: 200, Train Loss: 2.9019, Train MAPE: 0.0777, Train RMSE: 5.7439
+Iter: 250, Train Loss: 2.9681, Train MAPE: 0.0754, Train RMSE: 5.7170
+Iter: 300, Train Loss: 2.9702, Train MAPE: 0.0775, Train RMSE: 5.8698
+Iter: 350, Train Loss: 3.3295, Train MAPE: 0.0960, Train RMSE: 6.6844
+Epoch: 034, Inference Time: 1.0756 secs
+Epoch: 034, Train Loss: 3.0260, Train MAPE: 0.0829, Train RMSE: 6.0340, Valid Loss: 2.8956, Valid MAPE: 0.0839, Valid RMSE: 5.5780, Training Time: 22.7513/epoch
+Iter: 000, Train Loss: 3.1759, Train MAPE: 0.0997, Train RMSE: 6.3514
+Iter: 050, Train Loss: 2.8000, Train MAPE: 0.0714, Train RMSE: 5.5393
+Iter: 100, Train Loss: 3.2345, Train MAPE: 0.0860, Train RMSE: 6.3514
+Iter: 150, Train Loss: 3.0478, Train MAPE: 0.0887, Train RMSE: 6.1174
+Iter: 200, Train Loss: 3.0324, Train MAPE: 0.0811, Train RMSE: 6.0369
+Iter: 250, Train Loss: 3.0684, Train MAPE: 0.0822, Train RMSE: 6.0078
+Iter: 300, Train Loss: 2.8830, Train MAPE: 0.0783, Train RMSE: 5.6827
+Iter: 350, Train Loss: 2.8973, Train MAPE: 0.0759, Train RMSE: 5.8453
+Epoch: 035, Inference Time: 1.0761 secs
+Epoch: 035, Train Loss: 2.9961, Train MAPE: 0.0819, Train RMSE: 5.9858, Valid Loss: 2.8918, Valid MAPE: 0.0821, Valid RMSE: 5.6089, Training Time: 22.7575/epoch
+Iter: 000, Train Loss: 2.8840, Train MAPE: 0.0760, Train RMSE: 5.9213
+Iter: 050, Train Loss: 3.1588, Train MAPE: 0.0901, Train RMSE: 6.1945
+Iter: 100, Train Loss: 2.9799, Train MAPE: 0.0805, Train RMSE: 6.0099
+Iter: 150, Train Loss: 2.7555, Train MAPE: 0.0702, Train RMSE: 5.2962
+Iter: 200, Train Loss: 3.2218, Train MAPE: 0.0913, Train RMSE: 6.5456
+Iter: 250, Train Loss: 3.0766, Train MAPE: 0.0846, Train RMSE: 5.9813
+Iter: 300, Train Loss: 3.0428, Train MAPE: 0.0851, Train RMSE: 6.1173
+Iter: 350, Train Loss: 3.0578, Train MAPE: 0.0810, Train RMSE: 6.2209
+Epoch: 036, Inference Time: 1.0777 secs
+Epoch: 036, Train Loss: 2.9785, Train MAPE: 0.0812, Train RMSE: 5.9487, Valid Loss: 2.9133, Valid MAPE: 0.0815, Valid RMSE: 5.6060, Training Time: 22.8243/epoch
+Iter: 000, Train Loss: 2.9722, Train MAPE: 0.0824, Train RMSE: 5.9192
+Iter: 050, Train Loss: 3.0153, Train MAPE: 0.0875, Train RMSE: 6.1225
+Iter: 100, Train Loss: 2.9719, Train MAPE: 0.0762, Train RMSE: 5.8457
+Iter: 150, Train Loss: 2.9450, Train MAPE: 0.0752, Train RMSE: 5.6775
+Iter: 200, Train Loss: 2.8298, Train MAPE: 0.0730, Train RMSE: 5.6031
+Iter: 250, Train Loss: 2.8637, Train MAPE: 0.0734, Train RMSE: 5.7702
+Iter: 300, Train Loss: 2.8287, Train MAPE: 0.0748, Train RMSE: 5.5703
+Iter: 350, Train Loss: 3.0019, Train MAPE: 0.0874, Train RMSE: 6.1446
+Epoch: 037, Inference Time: 1.0773 secs
+Epoch: 037, Train Loss: 2.9510, Train MAPE: 0.0803, Train RMSE: 5.8984, Valid Loss: 2.8498, Valid MAPE: 0.0796, Valid RMSE: 5.5449, Training Time: 22.7508/epoch
+Iter: 000, Train Loss: 3.0861, Train MAPE: 0.0864, Train RMSE: 6.2265
+Iter: 050, Train Loss: 2.8752, Train MAPE: 0.0798, Train RMSE: 5.9569
+Iter: 100, Train Loss: 2.8786, Train MAPE: 0.0768, Train RMSE: 5.7087
+Iter: 150, Train Loss: 2.9034, Train MAPE: 0.0781, Train RMSE: 5.8780
+Iter: 200, Train Loss: 2.8939, Train MAPE: 0.0764, Train RMSE: 5.7835
+Iter: 250, Train Loss: 3.0168, Train MAPE: 0.0808, Train RMSE: 6.0616
+Iter: 300, Train Loss: 2.7077, Train MAPE: 0.0760, Train RMSE: 5.6826
+Iter: 350, Train Loss: 3.0948, Train MAPE: 0.0868, Train RMSE: 6.1019
+Epoch: 038, Inference Time: 1.0746 secs
+Epoch: 038, Train Loss: 2.9310, Train MAPE: 0.0796, Train RMSE: 5.8633, Valid Loss: 2.8808, Valid MAPE: 0.0795, Valid RMSE: 5.5730, Training Time: 22.7591/epoch
+Iter: 000, Train Loss: 3.0999, Train MAPE: 0.0857, Train RMSE: 6.0424
+Iter: 050, Train Loss: 2.8834, Train MAPE: 0.0794, Train RMSE: 5.6528
+Iter: 100, Train Loss: 2.8990, Train MAPE: 0.0777, Train RMSE: 5.7156
+Iter: 150, Train Loss: 2.8024, Train MAPE: 0.0762, Train RMSE: 5.7307
+Iter: 200, Train Loss: 2.8582, Train MAPE: 0.0739, Train RMSE: 5.5728
+Iter: 250, Train Loss: 2.7157, Train MAPE: 0.0702, Train RMSE: 5.4041
+Iter: 300, Train Loss: 3.0151, Train MAPE: 0.0911, Train RMSE: 6.2920
+Iter: 350, Train Loss: 2.8581, Train MAPE: 0.0772, Train RMSE: 5.8954
+Epoch: 039, Inference Time: 1.0752 secs
+Epoch: 039, Train Loss: 2.9091, Train MAPE: 0.0788, Train RMSE: 5.8184, Valid Loss: 2.8400, Valid MAPE: 0.0793, Valid RMSE: 5.5202, Training Time: 22.7565/epoch
+Iter: 000, Train Loss: 3.0451, Train MAPE: 0.0848, Train RMSE: 6.1735
+Iter: 050, Train Loss: 2.6214, Train MAPE: 0.0672, Train RMSE: 5.1591
+Iter: 100, Train Loss: 2.9691, Train MAPE: 0.0808, Train RMSE: 5.8066
+Iter: 150, Train Loss: 3.1159, Train MAPE: 0.0897, Train RMSE: 6.3698
+Iter: 200, Train Loss: 2.8437, Train MAPE: 0.0731, Train RMSE: 5.4810
+Iter: 250, Train Loss: 3.1361, Train MAPE: 0.0923, Train RMSE: 6.3794
+Iter: 300, Train Loss: 2.8071, Train MAPE: 0.0715, Train RMSE: 5.5847
+Iter: 350, Train Loss: 2.9217, Train MAPE: 0.0758, Train RMSE: 5.8512
+Epoch: 040, Inference Time: 1.0577 secs
+Epoch: 040, Train Loss: 2.8884, Train MAPE: 0.0781, Train RMSE: 5.7746, Valid Loss: 2.8297, Valid MAPE: 0.0786, Valid RMSE: 5.5145, Training Time: 22.8091/epoch
+Iter: 000, Train Loss: 3.2260, Train MAPE: 0.0964, Train RMSE: 6.5910
+Iter: 050, Train Loss: 2.7744, Train MAPE: 0.0764, Train RMSE: 5.5085
+Iter: 100, Train Loss: 2.8577, Train MAPE: 0.0732, Train RMSE: 5.5724
+Iter: 150, Train Loss: 2.5895, Train MAPE: 0.0660, Train RMSE: 5.1807
+Iter: 200, Train Loss: 2.8969, Train MAPE: 0.0848, Train RMSE: 5.8533
+Iter: 250, Train Loss: 3.2475, Train MAPE: 0.0903, Train RMSE: 6.4315
+Iter: 300, Train Loss: 2.8153, Train MAPE: 0.0725, Train RMSE: 5.4489
+Iter: 350, Train Loss: 2.8915, Train MAPE: 0.0733, Train RMSE: 5.7661
+Epoch: 041, Inference Time: 1.0715 secs
+Epoch: 041, Train Loss: 2.8705, Train MAPE: 0.0775, Train RMSE: 5.7404, Valid Loss: 2.8230, Valid MAPE: 0.0794, Valid RMSE: 5.5097, Training Time: 22.7540/epoch
+Iter: 000, Train Loss: 2.7199, Train MAPE: 0.0700, Train RMSE: 5.3533
+Iter: 050, Train Loss: 2.8223, Train MAPE: 0.0717, Train RMSE: 5.5230
+Iter: 100, Train Loss: 3.0732, Train MAPE: 0.0827, Train RMSE: 6.0767
+Iter: 150, Train Loss: 3.1063, Train MAPE: 0.0902, Train RMSE: 6.2448
+Iter: 200, Train Loss: 2.8342, Train MAPE: 0.0804, Train RMSE: 5.6918
+Iter: 250, Train Loss: 3.0714, Train MAPE: 0.0868, Train RMSE: 6.0861
+Iter: 300, Train Loss: 2.8657, Train MAPE: 0.0743, Train RMSE: 5.7101
+Iter: 350, Train Loss: 2.7367, Train MAPE: 0.0712, Train RMSE: 5.5009
+Epoch: 042, Inference Time: 1.0765 secs
+Epoch: 042, Train Loss: 2.8595, Train MAPE: 0.0771, Train RMSE: 5.7175, Valid Loss: 2.8334, Valid MAPE: 0.0785, Valid RMSE: 5.5150, Training Time: 22.7611/epoch
+Iter: 000, Train Loss: 2.7862, Train MAPE: 0.0718, Train RMSE: 5.5680
+Iter: 050, Train Loss: 2.7993, Train MAPE: 0.0737, Train RMSE: 5.5125
+Iter: 100, Train Loss: 2.8586, Train MAPE: 0.0763, Train RMSE: 5.6156
+Iter: 150, Train Loss: 2.8534, Train MAPE: 0.0807, Train RMSE: 5.7646
+Iter: 200, Train Loss: 2.7770, Train MAPE: 0.0734, Train RMSE: 5.5539
+Iter: 250, Train Loss: 3.0171, Train MAPE: 0.0747, Train RMSE: 5.6663
+Iter: 300, Train Loss: 3.1267, Train MAPE: 0.0865, Train RMSE: 6.0636
+Iter: 350, Train Loss: 2.7900, Train MAPE: 0.0751, Train RMSE: 5.6609
+Epoch: 043, Inference Time: 1.0784 secs
+Epoch: 043, Train Loss: 2.9080, Train MAPE: 0.0787, Train RMSE: 5.8011, Valid Loss: 2.8976, Valid MAPE: 0.0810, Valid RMSE: 5.6033, Training Time: 22.7496/epoch
+Iter: 000, Train Loss: 2.9852, Train MAPE: 0.0788, Train RMSE: 5.9867
+Iter: 050, Train Loss: 2.9677, Train MAPE: 0.0818, Train RMSE: 5.9182
+Iter: 100, Train Loss: 3.1605, Train MAPE: 0.0904, Train RMSE: 6.3666
+Iter: 150, Train Loss: 2.9312, Train MAPE: 0.0755, Train RMSE: 5.6528
+Iter: 200, Train Loss: 2.8926, Train MAPE: 0.0807, Train RMSE: 5.7908
+Iter: 250, Train Loss: 2.9397, Train MAPE: 0.0779, Train RMSE: 5.7003
+Iter: 300, Train Loss: 2.8383, Train MAPE: 0.0799, Train RMSE: 5.8438
+Iter: 350, Train Loss: 3.0955, Train MAPE: 0.0851, Train RMSE: 6.2416
+Epoch: 044, Inference Time: 1.0598 secs
+Epoch: 044, Train Loss: 2.9829, Train MAPE: 0.0812, Train RMSE: 5.9392, Valid Loss: 2.8878, Valid MAPE: 0.0814, Valid RMSE: 5.5519, Training Time: 22.7749/epoch
+Iter: 000, Train Loss: 3.0844, Train MAPE: 0.0870, Train RMSE: 6.0992
+Iter: 050, Train Loss: 3.0389, Train MAPE: 0.0876, Train RMSE: 5.8858
+Iter: 100, Train Loss: 2.8995, Train MAPE: 0.0772, Train RMSE: 5.7789
+Iter: 150, Train Loss: 2.9695, Train MAPE: 0.0834, Train RMSE: 6.0611
+Iter: 200, Train Loss: 3.1808, Train MAPE: 0.0901, Train RMSE: 6.3104
+Iter: 250, Train Loss: 2.9290, Train MAPE: 0.0760, Train RMSE: 5.8313
+Iter: 300, Train Loss: 3.1061, Train MAPE: 0.0865, Train RMSE: 6.4840
+Iter: 350, Train Loss: 2.9888, Train MAPE: 0.0751, Train RMSE: 5.6550
+Epoch: 045, Inference Time: 1.0619 secs
+Epoch: 045, Train Loss: 2.9702, Train MAPE: 0.0808, Train RMSE: 5.9193, Valid Loss: 2.8849, Valid MAPE: 0.0818, Valid RMSE: 5.5887, Training Time: 22.7321/epoch
+Iter: 000, Train Loss: 2.9961, Train MAPE: 0.0880, Train RMSE: 6.0885
+Iter: 050, Train Loss: 3.0374, Train MAPE: 0.0843, Train RMSE: 6.2934
+Iter: 100, Train Loss: 3.0599, Train MAPE: 0.0879, Train RMSE: 6.1555
+Iter: 150, Train Loss: 2.9060, Train MAPE: 0.0780, Train RMSE: 5.7795
+Iter: 200, Train Loss: 3.3011, Train MAPE: 0.0922, Train RMSE: 6.3603
+Iter: 250, Train Loss: 2.7522, Train MAPE: 0.0729, Train RMSE: 5.5512
+Iter: 300, Train Loss: 3.1019, Train MAPE: 0.0934, Train RMSE: 6.2994
+Iter: 350, Train Loss: 2.9250, Train MAPE: 0.0765, Train RMSE: 5.6822
+Epoch: 046, Inference Time: 1.0731 secs
+Epoch: 046, Train Loss: 2.9577, Train MAPE: 0.0804, Train RMSE: 5.9012, Valid Loss: 2.8941, Valid MAPE: 0.0809, Valid RMSE: 5.5906, Training Time: 22.7250/epoch
+Iter: 000, Train Loss: 3.0401, Train MAPE: 0.0901, Train RMSE: 6.2551
+Iter: 050, Train Loss: 2.8015, Train MAPE: 0.0751, Train RMSE: 5.4369
+Iter: 100, Train Loss: 3.0635, Train MAPE: 0.0852, Train RMSE: 6.0855
+Iter: 150, Train Loss: 3.1913, Train MAPE: 0.0918, Train RMSE: 6.1967
+Iter: 200, Train Loss: 2.7887, Train MAPE: 0.0696, Train RMSE: 5.5999
+Iter: 250, Train Loss: 2.8591, Train MAPE: 0.0778, Train RMSE: 5.7183
+Iter: 300, Train Loss: 2.7719, Train MAPE: 0.0717, Train RMSE: 5.5410
+Iter: 350, Train Loss: 2.9050, Train MAPE: 0.0825, Train RMSE: 5.9290
+Epoch: 047, Inference Time: 1.0683 secs
+Epoch: 047, Train Loss: 2.9314, Train MAPE: 0.0795, Train RMSE: 5.8537, Valid Loss: 2.9022, Valid MAPE: 0.0783, Valid RMSE: 5.6280, Training Time: 22.7287/epoch
+Iter: 000, Train Loss: 2.8045, Train MAPE: 0.0719, Train RMSE: 5.5216
+Iter: 050, Train Loss: 2.9406, Train MAPE: 0.0792, Train RMSE: 5.8708
+Iter: 100, Train Loss: 3.1177, Train MAPE: 0.0874, Train RMSE: 6.1364
+Iter: 150, Train Loss: 3.0270, Train MAPE: 0.0817, Train RMSE: 6.1060
+Iter: 200, Train Loss: 2.7504, Train MAPE: 0.0687, Train RMSE: 5.4345
+Iter: 250, Train Loss: 2.9784, Train MAPE: 0.0823, Train RMSE: 5.9061
+Iter: 300, Train Loss: 2.7773, Train MAPE: 0.0729, Train RMSE: 5.4495
+Iter: 350, Train Loss: 3.2915, Train MAPE: 0.1004, Train RMSE: 6.7191
+Epoch: 048, Inference Time: 1.0700 secs
+Epoch: 048, Train Loss: 2.9131, Train MAPE: 0.0789, Train RMSE: 5.8153, Valid Loss: 2.8359, Valid MAPE: 0.0792, Valid RMSE: 5.4862, Training Time: 22.7306/epoch
+Iter: 000, Train Loss: 2.8850, Train MAPE: 0.0756, Train RMSE: 5.5058
+Iter: 050, Train Loss: 3.0382, Train MAPE: 0.0827, Train RMSE: 6.0753
+Iter: 100, Train Loss: 2.9215, Train MAPE: 0.0821, Train RMSE: 5.7865
+Iter: 150, Train Loss: 2.6748, Train MAPE: 0.0680, Train RMSE: 5.3362
+Iter: 200, Train Loss: 3.2818, Train MAPE: 0.0952, Train RMSE: 6.7601
+Iter: 250, Train Loss: 2.6694, Train MAPE: 0.0677, Train RMSE: 5.3129
+Iter: 300, Train Loss: 3.0269, Train MAPE: 0.0980, Train RMSE: 6.3086
+Iter: 350, Train Loss: 2.8669, Train MAPE: 0.0795, Train RMSE: 5.9496
+Epoch: 049, Inference Time: 1.0620 secs
+Epoch: 049, Train Loss: 2.8927, Train MAPE: 0.0782, Train RMSE: 5.7759, Valid Loss: 2.8532, Valid MAPE: 0.0782, Valid RMSE: 5.5459, Training Time: 22.8015/epoch
+Iter: 000, Train Loss: 3.0794, Train MAPE: 0.0846, Train RMSE: 6.1747
+Iter: 050, Train Loss: 2.8636, Train MAPE: 0.0788, Train RMSE: 5.7915
+Iter: 100, Train Loss: 2.7115, Train MAPE: 0.0717, Train RMSE: 5.3298
+Iter: 150, Train Loss: 2.8792, Train MAPE: 0.0771, Train RMSE: 5.6780
+Iter: 200, Train Loss: 2.9798, Train MAPE: 0.0819, Train RMSE: 6.0071
+Iter: 250, Train Loss: 3.0413, Train MAPE: 0.0836, Train RMSE: 6.1426
+Iter: 300, Train Loss: 2.9192, Train MAPE: 0.0787, Train RMSE: 5.8094
+Iter: 350, Train Loss: 2.8207, Train MAPE: 0.0732, Train RMSE: 5.6721
+Epoch: 050, Inference Time: 1.0742 secs
+Epoch: 050, Train Loss: 2.8698, Train MAPE: 0.0774, Train RMSE: 5.7306, Valid Loss: 2.8289, Valid MAPE: 0.0780, Valid RMSE: 5.4971, Training Time: 22.7970/epoch
+Iter: 000, Train Loss: 3.0090, Train MAPE: 0.0868, Train RMSE: 6.1334
+Iter: 050, Train Loss: 2.7215, Train MAPE: 0.0671, Train RMSE: 5.2238
+Iter: 100, Train Loss: 2.9495, Train MAPE: 0.0790, Train RMSE: 5.8244
+Iter: 150, Train Loss: 2.9029, Train MAPE: 0.0776, Train RMSE: 5.7276
+Iter: 200, Train Loss: 2.5881, Train MAPE: 0.0689, Train RMSE: 5.3475
+Iter: 250, Train Loss: 2.7762, Train MAPE: 0.0711, Train RMSE: 5.5988
+Iter: 300, Train Loss: 2.9345, Train MAPE: 0.0849, Train RMSE: 5.8067
+Iter: 350, Train Loss: 2.6280, Train MAPE: 0.0638, Train RMSE: 5.1801
+Epoch: 051, Inference Time: 1.0768 secs
+Epoch: 051, Train Loss: 2.8515, Train MAPE: 0.0768, Train RMSE: 5.6892, Valid Loss: 2.8448, Valid MAPE: 0.0792, Valid RMSE: 5.5386, Training Time: 22.8321/epoch
+Iter: 000, Train Loss: 2.8551, Train MAPE: 0.0783, Train RMSE: 5.6803
+Iter: 050, Train Loss: 2.8049, Train MAPE: 0.0823, Train RMSE: 5.6756
+Iter: 100, Train Loss: 2.9539, Train MAPE: 0.0785, Train RMSE: 5.8042
+Iter: 150, Train Loss: 2.9825, Train MAPE: 0.0867, Train RMSE: 6.2589
+Iter: 200, Train Loss: 2.9603, Train MAPE: 0.0776, Train RMSE: 5.6795
+Iter: 250, Train Loss: 2.8911, Train MAPE: 0.0743, Train RMSE: 5.7218
+Iter: 300, Train Loss: 2.5772, Train MAPE: 0.0619, Train RMSE: 5.0064
+Iter: 350, Train Loss: 2.7603, Train MAPE: 0.0705, Train RMSE: 5.4076
+Epoch: 052, Inference Time: 1.0681 secs
+Epoch: 052, Train Loss: 2.8377, Train MAPE: 0.0763, Train RMSE: 5.6594, Valid Loss: 2.8561, Valid MAPE: 0.0783, Valid RMSE: 5.5564, Training Time: 22.7701/epoch
+Iter: 000, Train Loss: 2.8442, Train MAPE: 0.0799, Train RMSE: 5.9493
+Iter: 050, Train Loss: 2.9265, Train MAPE: 0.0768, Train RMSE: 5.7596
+Iter: 100, Train Loss: 2.7189, Train MAPE: 0.0755, Train RMSE: 5.3962
+Iter: 150, Train Loss: 2.8521, Train MAPE: 0.0768, Train RMSE: 5.6303
+Iter: 200, Train Loss: 2.8514, Train MAPE: 0.0838, Train RMSE: 5.7596
+Iter: 250, Train Loss: 2.8636, Train MAPE: 0.0782, Train RMSE: 5.6737
+Iter: 300, Train Loss: 2.6582, Train MAPE: 0.0660, Train RMSE: 5.2486
+Iter: 350, Train Loss: 2.7321, Train MAPE: 0.0713, Train RMSE: 5.5845
+Epoch: 053, Inference Time: 1.0724 secs
+Epoch: 053, Train Loss: 2.8285, Train MAPE: 0.0759, Train RMSE: 5.6408, Valid Loss: 2.8492, Valid MAPE: 0.0786, Valid RMSE: 5.5496, Training Time: 22.7188/epoch
+Iter: 000, Train Loss: 3.0651, Train MAPE: 0.0911, Train RMSE: 6.4936
+Iter: 050, Train Loss: 2.8581, Train MAPE: 0.0811, Train RMSE: 5.7136
+Iter: 100, Train Loss: 2.8861, Train MAPE: 0.0792, Train RMSE: 5.8564
+Iter: 150, Train Loss: 3.1536, Train MAPE: 0.0908, Train RMSE: 6.2369
+Iter: 200, Train Loss: 3.1486, Train MAPE: 0.0821, Train RMSE: 6.1212
+Iter: 250, Train Loss: 2.8077, Train MAPE: 0.0757, Train RMSE: 5.4849
+Iter: 300, Train Loss: 2.7679, Train MAPE: 0.0716, Train RMSE: 5.4025
+Iter: 350, Train Loss: 2.7228, Train MAPE: 0.0693, Train RMSE: 5.3729
+Epoch: 054, Inference Time: 1.0583 secs
+Epoch: 054, Train Loss: 2.9268, Train MAPE: 0.0792, Train RMSE: 5.8216, Valid Loss: 2.8870, Valid MAPE: 0.0787, Valid RMSE: 5.6059, Training Time: 22.7490/epoch
+Iter: 000, Train Loss: 2.9104, Train MAPE: 0.0799, Train RMSE: 6.0174
+Iter: 050, Train Loss: 2.7120, Train MAPE: 0.0704, Train RMSE: 5.0848
+Iter: 100, Train Loss: 3.1804, Train MAPE: 0.0878, Train RMSE: 6.3334
+Iter: 150, Train Loss: 3.0913, Train MAPE: 0.0815, Train RMSE: 5.9339
+Iter: 200, Train Loss: 2.8825, Train MAPE: 0.0779, Train RMSE: 5.9332
+Iter: 250, Train Loss: 2.7454, Train MAPE: 0.0679, Train RMSE: 5.2850
+Iter: 300, Train Loss: 2.7909, Train MAPE: 0.0723, Train RMSE: 5.4999
+Iter: 350, Train Loss: 3.0026, Train MAPE: 0.0908, Train RMSE: 6.5073
+Epoch: 055, Inference Time: 1.0620 secs
+Epoch: 055, Train Loss: 2.9500, Train MAPE: 0.0800, Train RMSE: 5.8747, Valid Loss: 2.8795, Valid MAPE: 0.0797, Valid RMSE: 5.5328, Training Time: 22.6796/epoch
+Iter: 000, Train Loss: 2.9757, Train MAPE: 0.0805, Train RMSE: 5.8544
+Iter: 050, Train Loss: 3.1056, Train MAPE: 0.0878, Train RMSE: 6.2257
+Iter: 100, Train Loss: 2.7920, Train MAPE: 0.0689, Train RMSE: 5.4673
+Iter: 150, Train Loss: 2.9718, Train MAPE: 0.0894, Train RMSE: 6.1330
+Iter: 200, Train Loss: 2.9240, Train MAPE: 0.0759, Train RMSE: 5.6954
+Iter: 250, Train Loss: 2.8410, Train MAPE: 0.0764, Train RMSE: 5.5565
+Iter: 300, Train Loss: 2.9950, Train MAPE: 0.0798, Train RMSE: 6.0488
+Iter: 350, Train Loss: 2.8984, Train MAPE: 0.0789, Train RMSE: 5.9394
+Epoch: 056, Inference Time: 1.0759 secs
+Epoch: 056, Train Loss: 2.9358, Train MAPE: 0.0796, Train RMSE: 5.8508, Valid Loss: 2.8933, Valid MAPE: 0.0817, Valid RMSE: 5.5924, Training Time: 22.7248/epoch
+Iter: 000, Train Loss: 2.6453, Train MAPE: 0.0650, Train RMSE: 5.1372
+Iter: 050, Train Loss: 3.1014, Train MAPE: 0.0856, Train RMSE: 6.1814
+Iter: 100, Train Loss: 2.9410, Train MAPE: 0.0809, Train RMSE: 6.0259
+Iter: 150, Train Loss: 2.8985, Train MAPE: 0.0828, Train RMSE: 5.8510
+Iter: 200, Train Loss: 3.1857, Train MAPE: 0.0885, Train RMSE: 6.2660
+Iter: 250, Train Loss: 3.0668, Train MAPE: 0.0908, Train RMSE: 6.2172
+Iter: 300, Train Loss: 2.8243, Train MAPE: 0.0717, Train RMSE: 5.6022
+Iter: 350, Train Loss: 2.7841, Train MAPE: 0.0683, Train RMSE: 5.6356
+Epoch: 057, Inference Time: 1.0569 secs
+Epoch: 057, Train Loss: 2.9171, Train MAPE: 0.0789, Train RMSE: 5.8127, Valid Loss: 2.8767, Valid MAPE: 0.0801, Valid RMSE: 5.5856, Training Time: 22.7344/epoch
+Early Termination!
+Average Training Time: 22.8871 secs/epoch
+Average Inference Time: 1.0701 secs
+Training finished
+The valid loss on best model is 2.823
+Evaluate best model on test data for horizon 1, Test MAE: 2.3458, Test MAPE: 0.0570, Test RMSE: 4.1673
+Evaluate best model on test data for horizon 2, Test MAE: 2.6052, Test MAPE: 0.0657, Test RMSE: 4.9409
+Evaluate best model on test data for horizon 3, Test MAE: 2.7897, Test MAPE: 0.0727, Test RMSE: 5.4549
+Evaluate best model on test data for horizon 4, Test MAE: 2.9426, Test MAPE: 0.0787, Test RMSE: 5.8673
+Evaluate best model on test data for horizon 5, Test MAE: 3.0691, Test MAPE: 0.0837, Test RMSE: 6.2060
+Evaluate best model on test data for horizon 6, Test MAE: 3.1744, Test MAPE: 0.0879, Test RMSE: 6.4837
+Evaluate best model on test data for horizon 7, Test MAE: 3.2621, Test MAPE: 0.0914, Test RMSE: 6.7128
+Evaluate best model on test data for horizon 8, Test MAE: 3.3403, Test MAPE: 0.0947, Test RMSE: 6.9125
+Evaluate best model on test data for horizon 9, Test MAE: 3.4094, Test MAPE: 0.0977, Test RMSE: 7.0902
+Evaluate best model on test data for horizon 10, Test MAE: 3.4713, Test MAPE: 0.1004, Test RMSE: 7.2444
+Evaluate best model on test data for horizon 11, Test MAE: 3.5286, Test MAPE: 0.1028, Test RMSE: 7.3759
+Evaluate best model on test data for horizon 12, Test MAE: 3.5805, Test MAPE: 0.1046, Test RMSE: 7.4863
+On average over 12 horizons, Test MAE: 3.1266, Test MAPE: 0.0865, Test RMSE: 6.3285
+Total time spent: 1402.8226

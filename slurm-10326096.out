@@ -1,0 +1,40 @@
+Start Deterministic Training with seed 99
+Namespace(device='cuda:0', data='/home/p_tf_zy/p_tf_01/TESTAM-main/data/METR-LA', adjdata='/home/p_tf_zy/p_tf_01/TESTAM-main/data/METR-LA/adj_mx.pkl', adjtype='doubletransition', out_dim=1, nhid=32, in_dim=2, num_nodes=207, batch_size=64, dropout=0.2, epochs=100, print_every=50, seed=99, save='/home/p_tf_zy/p_tf_01/TESTAM-main/experiment/METR-LA_TESTAM', expid=1, load_path=None, patience=15, lr_mul=0.001, n_warmup_steps=4000, quantile=0.7, is_quantile=False, warmup_epoch=0)
+Train the model with 142042 parameters
+start training...
+Iter: 000, Train Loss: 11.9929, Train MAPE: 0.3052, Train RMSE: 14.0300
+Iter: 050, Train Loss: 11.9075, Train MAPE: 0.3056, Train RMSE: 13.8432
+Iter: 100, Train Loss: 11.6979, Train MAPE: 0.3005, Train RMSE: 13.8226
+Iter: 150, Train Loss: 12.0185, Train MAPE: 0.3183, Train RMSE: 14.2110
+Iter: 200, Train Loss: 10.8171, Train MAPE: 0.2437, Train RMSE: 12.5256
+Iter: 250, Train Loss: 11.7443, Train MAPE: 0.3176, Train RMSE: 13.9811
+Iter: 300, Train Loss: 11.4913, Train MAPE: 0.2963, Train RMSE: 13.5607
+Iter: 350, Train Loss: 11.1831, Train MAPE: 0.2638, Train RMSE: 12.9512
+Epoch: 001, Inference Time: 2.6529 secs
+Epoch: 001, Train Loss: nan, Train MAPE: 0.2872, Train RMSE: 13.4979, Valid Loss: 11.3559, Valid MAPE: 0.2972, Valid RMSE: 13.2392, Training Time: 64.8469/epoch
+Iter: 000, Train Loss: 11.8467, Train MAPE: 0.3066, Train RMSE: 13.9681
+Iter: 050, Train Loss: 11.8114, Train MAPE: 0.3074, Train RMSE: 13.9052
+Iter: 100, Train Loss: 11.5352, Train MAPE: 0.2925, Train RMSE: 13.6476
+Iter: 150, Train Loss: 11.2304, Train MAPE: 0.2650, Train RMSE: 13.1019
+Iter: 200, Train Loss: 11.1599, Train MAPE: 0.2753, Train RMSE: 13.0917
+Iter: 250, Train Loss: 11.0173, Train MAPE: 0.2647, Train RMSE: 12.8750
+Iter: 300, Train Loss: 11.9746, Train MAPE: 0.3189, Train RMSE: 14.1572
+Iter: 350, Train Loss: 11.5564, Train MAPE: 0.3025, Train RMSE: 13.6977
+Epoch: 002, Inference Time: 2.6501 secs
+Epoch: 002, Train Loss: 11.4971, Train MAPE: 0.2869, Train RMSE: 13.4873, Valid Loss: 11.3559, Valid MAPE: 0.2972, Valid RMSE: 13.2392, Training Time: 58.5929/epoch
+Iter: 000, Train Loss: 11.3181, Train MAPE: 0.2809, Train RMSE: 13.3727
+Iter: 050, Train Loss: 11.5637, Train MAPE: 0.2999, Train RMSE: 13.6811
+Iter: 100, Train Loss: 11.2993, Train MAPE: 0.2703, Train RMSE: 13.1440
+Iter: 150, Train Loss: 11.5229, Train MAPE: 0.2680, Train RMSE: 13.3095
+Iter: 200, Train Loss: 11.6184, Train MAPE: 0.2991, Train RMSE: 13.6992
+Iter: 250, Train Loss: 11.1803, Train MAPE: 0.2621, Train RMSE: 13.0164
+Iter: 300, Train Loss: 11.8149, Train MAPE: 0.2957, Train RMSE: 13.7542
+Iter: 350, Train Loss: 11.3436, Train MAPE: 0.2852, Train RMSE: 13.2584
+Epoch: 003, Inference Time: 2.6503 secs
+Epoch: 003, Train Loss: 11.4972, Train MAPE: 0.2869, Train RMSE: 13.4870, Valid Loss: 11.3559, Valid MAPE: 0.2972, Valid RMSE: 13.2392, Training Time: 58.5893/epoch
+Iter: 000, Train Loss: 11.5849, Train MAPE: 0.2829, Train RMSE: 13.4959
+Iter: 050, Train Loss: 11.7667, Train MAPE: 0.3053, Train RMSE: 13.8883
+Iter: 100, Train Loss: 11.8154, Train MAPE: 0.2976, Train RMSE: 13.8602
+Iter: 150, Train Loss: 11.3460, Train MAPE: 0.2813, Train RMSE: 13.3445
+Iter: 200, Train Loss: 11.2590, Train MAPE: 0.2591, Train RMSE: 12.9918
+slurmstepd: error: *** JOB 10326096 ON x1001c0s2b0n1 CANCELLED AT 2025-03-17T17:01:06 ***
