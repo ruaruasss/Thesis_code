@@ -4,7 +4,7 @@ import torch.nn.functional as F
 from torch.autograd import Variable
 import sys, math
 from copy import deepcopy as cp
-##without attention expert
+
 
 class nconv(nn.Module):
     def __init__(self):
@@ -219,24 +219,14 @@ class TemporalInformationEmbedding(nn.Module):
         self.n_freq = n_freq
 
     def forward(self, x):
-        assert torch.any(torch.isnan(x)) == False, "x Information Embedding has NaN"
-        assert torch.any(torch.isnan(self.embedding.weight)) == False, "self.embedding.weight Information Embedding has NaN"
         x_emb = self.embedding(x)
-        assert torch.any(torch.isnan(x_emb)) == False, "x_emb Information Embedding has NaN"
-
         x_weight = self.linear(x_emb)
-        assert torch.any(torch.isnan(x_weight)) == False, "x_weight Information Embedding has NaN"
-
         if self.n_freq == 0:
             return x_weight
         if self.n_freq == x_emb.size(-1):
-            assert torch.any(torch.isnan(self.freq_act(x_weight))) == False, "self.freq_act(x_weight) Information Embedding has NaN"
             return self.freq_act(x_weight)
         x_linear = x_weight[...,self.n_freq:]
         x_act = self.freq_act(x_weight[...,:self.n_freq])
-        assert torch.any(torch.isnan(x_act)) == False, "x_act Information Embedding has NaN"
-        assert torch.any(torch.isnan(torch.cat([x_linear, x_act], dim = -1))) == False, "torch.cat([x_linear, x_act], dim = -1) Information Embedding has NaN"
-
         return torch.cat([x_linear, x_act], dim = -1)
 
 
@@ -253,11 +243,12 @@ class TemporalModel(nn.Module):
         - vocab_size: total number of temporal features (e.g., 7 days)
             - Notes: in the trivial traffic forecasting problem, we have total 288 = 24 * 60 / 5 (5 min interval)
     """
-    def __init__(self, hidden_size, num_nodes, layers, dropout, in_dim = 1, out_dim = 1, vocab_size = 288, activation = nn.ReLU()):
+    def __init__(self, hidden_size, num_nodes, layers, dropout, in_dim = 1, out_dim = 1, vocab_size = 288, activation = nn.ReLU(), use_tim=False):
         super(TemporalModel, self).__init__()
         self.vocab_size = vocab_size
         self.act = activation
         self.in_dim = in_dim
+        self.use_tim = use_tim #new
         self.embedding = TemporalInformationEmbedding(hidden_size, vocab_size = vocab_size)
         self.spd_proj = nn.Linear(in_dim, hidden_size)
         self.spd_cat = nn.Linear(hidden_size * 2, hidden_size) # Cat speed information and TIM information
@@ -278,8 +269,13 @@ class TemporalModel(nn.Module):
 
 
     def forward(self, x, speed = None):
-        TIM = self.embedding(x)
-        assert torch.any(torch.isnan(TIM)) == False, "Temporal Information Embedding has NaN"
+        if self.use_tim:
+            TIM = self.embedding(x)
+        else:
+            TIM = torch.zeros((x.size(0), x.size(1), self.node_features.size(-1)), device=x.device)
+        
+        #TIM = self.embedding(x)
+
         #For the traffic forecasting, we introduce learnable node features
         #The user may modify this node feature into meta-learning based representation, which enables the ability to adopt the model into different dataset
         x_nemb = torch.einsum('btc, nc -> bntc', TIM, self.node_features)
@@ -553,15 +549,15 @@ class TESTAM(nn.Module):
         self.prob_mul = prob_mul
         self.supports_len = 2
         self.max_time_index = max_time_index
+        #self.supports_dropout = nn.Dropout(p=dropout)
 
         self.identity_expert = TemporalModel(hidden_size, num_nodes, in_dim = in_dim - 1, out_dim = out_dim, layers = layers, dropout = dropout, vocab_size = max_time_index)
         self.adaptive_expert = STModel(hidden_size, self.supports_len, num_nodes, in_dim = in_dim, out_dim = out_dim, layers = layers, dropout = dropout)
-        # self.attention_expert = AttentionModel(hidden_size, in_dim = in_dim, out_dim = out_dim, layers = layers, dropout = dropout)
+        self.attention_expert = AttentionModel(hidden_size, in_dim = in_dim, out_dim = out_dim, layers = layers, dropout = dropout)
 
         self.gate_network = MemoryGate(hidden_size, num_nodes, in_dim = in_dim, out_dim = out_dim)
 
-        for model in [self.identity_expert, self.adaptive_expert]:
-        #for model in [self.identity_expert]:
+        for model in [self.identity_expert, self.adaptive_expert, self.attention_expert]:
             for n, p in model.named_parameters():
                 if p.dim() > 1:
                     nn.init.xavier_uniform_(p)
@@ -576,36 +572,34 @@ class TESTAM(nn.Module):
         n2 = torch.matmul(self.gate_network.We2, self.gate_network.memory)
         g1 = torch.softmax(torch.relu(torch.mm(n1, n2.T)), dim = -1)
         g2 = torch.softmax(torch.relu(torch.mm(n2, n1.T)), dim = -1)
+
+        # Apply dropout on the support matrices (only during training)
+        # if self.training:
+        #     g1 = self.supports_dropout(g1)
+        #     g2 = self.supports_dropout(g2)
+
         new_supports = [g1, g2]
 
         time_index = input[:,-1,0] # B, T
-     
         max_t = self.max_time_index
-        cur_time_index = ((time_index * max_t) % max_t).long() # B, T, values of 0 to max_t - 1
-        next_time_index = ((time_index * max_t + time_index.size(-1)) % max_t).long() # B, T, values of 0 to max_t - 1. But we added time_index dim
-        assert torch.any(torch.isnan(cur_time_index)) == False, "cur_time_index Information Embedding has NaN"
-
-        assert torch.any(torch.isnan(input[:,:-1].permute(0,2,3,1))) == False, "input Information Embedding has NaN"
-        assert torch.any(torch.isnan(next_time_index)) == False, "next_time_index Information Embedding has NaN"
-
+        cur_time_index = ((time_index * max_t) % max_t).long()
+        next_time_index = ((time_index * max_t + time_index.size(-1)) % max_t).long()
         o_identity, h_identity = self.identity_expert(cur_time_index, input[:,:-1].permute(0,2,3,1))
         _, h_future = self.identity_expert(next_time_index)
 
+
         _, o_adaptive, h_adaptive = self.adaptive_expert(input, h_future, new_supports)
 
-        # o_attention, h_attention = self.attention_expert(input, h_future)
+        o_attention, h_attention = self.attention_expert(input, h_future)
 
-        #ind_out = torch.stack([o_identity], dim = -1)
-        ind_out = torch.stack([o_identity, o_adaptive], dim = -1)
+        ind_out = torch.stack([o_identity, o_adaptive, o_attention], dim = -1)
 
         B, N, T, _ = o_identity.size()
-        #gate_in = [h_identity[-1]]
-        gate_in = [h_identity[-1], h_adaptive[-1]]
+        gate_in = [h_identity[-1], h_adaptive[-1], h_attention]
         gate = torch.softmax(self.gate_network(input.permute(0,2,3,1), gate_in), dim = -1)
         out = torch.zeros_like(o_identity).view(-1,1)
 
-        outs = [o_identity, o_adaptive]
-        #outs = [o_identity]
+        outs = [o_identity, o_adaptive, o_attention]
         counts = []
 
         route_prob_max, routes = torch.max(gate, dim = -1)

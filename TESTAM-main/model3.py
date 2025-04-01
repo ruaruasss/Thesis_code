@@ -544,7 +544,6 @@ class TESTAM(nn.Module):
         self.num_nodes = num_nodes
         self.supports_len = 1
         self.max_time_index = max_time_index
-        self.alpha = nn.Parameter(torch.ones(3))  # 初始等权重
 
         self.identity_expert = TemporalModel(hidden_size, num_nodes, in_dim = in_dim - 1, out_dim = out_dim, layers = layers, dropout = dropout, vocab_size = max_time_index)
         self.adaptive_expert = STModel(hidden_size, self.supports_len, num_nodes, in_dim = in_dim, out_dim = out_dim, layers = layers, dropout = dropout)
@@ -579,9 +578,7 @@ class TESTAM(nn.Module):
         g2 = torch.softmax(torch.relu(torch.mm(n2, n3.T)), dim = -1)
         g3 = torch.softmax(torch.relu(torch.mm(n3, n1.T)), dim=-1)
 
-         weights = torch.softmax(self.alpha, dim=0)
-        g_combined = weights[0]*g1 + weights[1]*g2 + weights[2]*g3
-        #g_combined = g1 + g2 + g3  # 元素级相加 (N, N)
+        g_combined = g1 + g2 + g3  # 元素级相加 (N, N)
         g_flat = g_combined.flatten()  # 展平为 (N*N,)
 
         # Flatten and concatenate the support matrices
