@@ -400,6 +400,10 @@ class AttentionModel(nn.Module):
 
         return self.proj(self.act(x)), x
 
+def xavier_param(*shape):
+    param = nn.Parameter(torch.empty(*shape))
+    nn.init.xavier_uniform_(param)
+    return param
 
 class MemoryGate(nn.Module):
     """
@@ -421,16 +425,26 @@ class MemoryGate(nn.Module):
         self.nodewise = nodewise
         self.out_dim = out_dim
 
-        self.memory = nn.Parameter(torch.empty(memory_size, mem_hid))
+        # self.memory = nn.Parameter(torch.empty(memory_size, mem_hid))
         
-        self.hid_query = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(3)])
-        self.key = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(3)])
-        self.value = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(3)])
+        # self.hid_query = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(3)])
+        # self.key = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(3)])
+        # self.value = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(3)])
         
-        self.input_query = nn.Parameter(torch.empty(in_dim, mem_hid))
+        # self.input_query = nn.Parameter(torch.empty(in_dim, mem_hid))
 
-        self.We1 = nn.Parameter(torch.empty(num_nodes, memory_size))
-        self.We2 = nn.Parameter(torch.empty(num_nodes, memory_size))
+        # self.We1 = nn.Parameter(torch.empty(num_nodes, memory_size))
+        # self.We2 = nn.Parameter(torch.empty(num_nodes, memory_size))
+
+        self.memory = xavier_param(memory_size, mem_hid)  # M
+
+        self.hid_query = nn.ParameterList([xavier_param(hidden_size, mem_hid) for _ in range(3)])
+        self.key = nn.ParameterList([xavier_param(hidden_size, mem_hid) for _ in range(3)])
+        self.value = nn.ParameterList([xavier_param(hidden_size, mem_hid) for _ in range(3)])
+
+        self.input_query = xavier_param(in_dim, mem_hid)  # W_q
+        self.We1 = xavier_param(num_nodes, memory_size)  # W_E1
+        self.We2 = xavier_param(num_nodes, memory_size)  # W_E2
         
         for p in self.parameters():
             if p.dim() > 1:
@@ -549,7 +563,7 @@ class TESTAM(nn.Module):
         self.prob_mul = prob_mul
         self.supports_len = 2
         self.max_time_index = max_time_index
-        #self.supports_dropout = nn.Dropout(p=dropout)
+        self.supports_dropout = nn.Dropout(p=dropout)
 
         self.identity_expert = TemporalModel(hidden_size, num_nodes, in_dim = in_dim - 1, out_dim = out_dim, layers = layers, dropout = dropout, vocab_size = max_time_index)
         self.adaptive_expert = STModel(hidden_size, self.supports_len, num_nodes, in_dim = in_dim, out_dim = out_dim, layers = layers, dropout = dropout)
@@ -574,9 +588,9 @@ class TESTAM(nn.Module):
         g2 = torch.softmax(torch.relu(torch.mm(n2, n1.T)), dim = -1)
 
         # Apply dropout on the support matrices (only during training)
-        # if self.training:
-        #     g1 = self.supports_dropout(g1)
-        #     g2 = self.supports_dropout(g2)
+        if self.training:
+            g1 = self.supports_dropout(g1)
+            g2 = self.supports_dropout(g2)
 
         new_supports = [g1, g2]
 

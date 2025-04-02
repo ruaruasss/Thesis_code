@@ -273,11 +273,12 @@ class TemporalModel(nn.Module):
         - vocab_size: total number of temporal features (e.g., 7 days)
             - Notes: in the trivial traffic forecasting problem, we have total 288 = 24 * 60 / 5 (5 min interval)
     """
-    def __init__(self, hidden_size, num_nodes, layers, dropout, in_dim = 1, out_dim = 1, vocab_size = 288, activation = nn.ReLU()):
+    def __init__(self, hidden_size, num_nodes, layers, dropout, in_dim = 1, out_dim = 1, vocab_size = 288, activation = nn.ReLU(), use_tim=False):
         super(TemporalModel, self).__init__()
         self.vocab_size = vocab_size
         self.act = activation
         self.in_dim = in_dim
+        self.use_tim = use_tim #new
         self.embedding = TemporalInformationEmbedding(hidden_size, vocab_size = vocab_size)
         self.spd_proj = nn.Linear(in_dim, hidden_size)
         self.spd_cat = nn.Linear(hidden_size * 2, hidden_size) # Cat speed information and TIM information
@@ -298,7 +299,12 @@ class TemporalModel(nn.Module):
 
 
     def forward(self, x, speed = None):
-        TIM = self.embedding(x)
+        if self.use_tim:
+            TIM = self.embedding(x)
+        else:
+            TIM = torch.zeros((x.size(0), x.size(1), self.node_features.size(-1)), device=x.device)
+        
+        #TIM = self.embedding(x)
         #For the traffic forecasting, we introduce learnable node features
         #The user may modify this node feature into meta-learning based representation, which enables the ability to adopt the model into different dataset
         x_nemb = torch.einsum('btc, nc -> bntc', TIM, self.node_features)
@@ -588,26 +594,26 @@ class MemoryGate(nn.Module):
         self.nodewise = nodewise
         self.out_dim = out_dim
         
-        # self.memory = nn.Parameter(torch.empty(memory_size, mem_hid))  # M
+        self.memory = nn.Parameter(torch.empty(memory_size, mem_hid))  # M
         
-        # self.hid_query = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(4)])
-        # self.key = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(4)])
-        # self.value = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(4)]) 
+        self.hid_query = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(4)])
+        self.key = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(4)])
+        self.value = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(4)]) 
         
-        # self.input_query = nn.Parameter(torch.empty(in_dim, mem_hid)) # W_q
+        self.input_query = nn.Parameter(torch.empty(in_dim, mem_hid)) # W_q
 
-        # self.We1 = nn.Parameter(torch.empty(num_nodes, memory_size))  #W_E1
-        # self.We2 = nn.Parameter(torch.empty(num_nodes, memory_size))  #W_E2
+        self.We1 = nn.Parameter(torch.empty(num_nodes, memory_size))  #W_E1
+        self.We2 = nn.Parameter(torch.empty(num_nodes, memory_size))  #W_E2
 
-        self.memory = xavier_param(memory_size, mem_hid)  # M
+        # self.memory = xavier_param(memory_size, mem_hid)  # M
 
-        self.hid_query = nn.ParameterList([xavier_param(hidden_size, mem_hid) for _ in range(4)])
-        self.key = nn.ParameterList([xavier_param(hidden_size, mem_hid) for _ in range(4)])
-        self.value = nn.ParameterList([xavier_param(hidden_size, mem_hid) for _ in range(4)])
+        # self.hid_query = nn.ParameterList([xavier_param(hidden_size, mem_hid) for _ in range(4)])
+        # self.key = nn.ParameterList([xavier_param(hidden_size, mem_hid) for _ in range(4)])
+        # self.value = nn.ParameterList([xavier_param(hidden_size, mem_hid) for _ in range(4)])
 
-        self.input_query = xavier_param(in_dim, mem_hid)  # W_q
-        self.We1 = xavier_param(num_nodes, memory_size)  # W_E1
-        self.We2 = xavier_param(num_nodes, memory_size)  # W_E2
+        # self.input_query = xavier_param(in_dim, mem_hid)  # W_q
+        # self.We1 = xavier_param(num_nodes, memory_size)  # W_E1
+        # self.We2 = xavier_param(num_nodes, memory_size)  # W_E2
         
         for p in self.parameters():
             if p.dim() > 1:
@@ -727,6 +733,7 @@ class TESTAM(nn.Module):
         self.supports_len = 2
         self.max_time_index = max_time_index
         self.device = device
+        self.supports_dropout = nn.Dropout(p=dropout)
 
         # 确保 init_graph 在所有情况下都有默认值
         init_graph = torch.zeros((num_nodes, num_nodes), dtype=torch.float32).to(device)
@@ -780,6 +787,11 @@ class TESTAM(nn.Module):
 
         g1 = torch.softmax(torch.relu(torch.mm(n1, n2.T)), dim = -1) # A = softmax(relu(E E^T))
         g2 = torch.softmax(torch.relu(torch.mm(n2, n1.T)), dim = -1) # A = softmax(relu(E E^T))
+
+        # Apply dropout on the support matrices (only during training)
+        if self.training:
+            g1 = self.supports_dropout(g1)
+            g2 = self.supports_dropout(g2)
 
         new_supports = [g1, g2]
 
