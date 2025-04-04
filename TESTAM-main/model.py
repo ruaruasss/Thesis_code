@@ -582,15 +582,19 @@ class TESTAM(nn.Module):
          - Note: we assume that the last dimeions of in_dim is temporal feature, such as tod or dow (could be represented as integer)
         o_identity shape B, N, T, 1
         """
-        n1 = torch.matmul(self.gate_network.We1, self.gate_network.memory)
+        n1 = torch.matmul(self.gate_network.We1, self.gate_network.memory) # E = M W_E
+        n1 = self.supports_dropout(n1)
+
         n2 = torch.matmul(self.gate_network.We2, self.gate_network.memory)
-        g1 = torch.softmax(torch.relu(torch.mm(n1, n2.T)), dim = -1)
+        n2 = self.supports_dropout(n2)
+
+        g1 = torch.softmax(torch.relu(torch.mm(n1, n2.T)), dim = -1) # A = softmax(relu(E E^T))
         g2 = torch.softmax(torch.relu(torch.mm(n2, n1.T)), dim = -1)
 
         # Apply dropout on the support matrices (only during training)
-        if self.training:
-            g1 = self.supports_dropout(g1)
-            g2 = self.supports_dropout(g2)
+        # if self.training:
+        #     g1 = self.supports_dropout(g1)
+        #     g2 = self.supports_dropout(g2)
 
         new_supports = [g1, g2]
 
