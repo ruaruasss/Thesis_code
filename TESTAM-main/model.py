@@ -583,10 +583,8 @@ class TESTAM(nn.Module):
         o_identity shape B, N, T, 1
         """
         n1 = torch.matmul(self.gate_network.We1, self.gate_network.memory) # E = M W_E
-        #n1 = self.supports_dropout(n1)
 
         n2 = torch.matmul(self.gate_network.We2, self.gate_network.memory)
-        #n2 = self.supports_dropout(n2)
 
         g1 = torch.softmax(torch.relu(torch.mm(n1, n2.T)), dim = -1) # A = softmax(relu(E E^T))
         g2 = torch.softmax(torch.relu(torch.mm(n2, n1.T)), dim = -1)

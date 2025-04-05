@@ -393,6 +393,10 @@ class AttentionModel(nn.Module):
 
         return self.proj(self.act(x)), x
 
+def xavier_param(*shape):
+    param = nn.Parameter(torch.empty(*shape))
+    nn.init.xavier_uniform_(param)
+    return param
 
 class MemoryGate(nn.Module):
     """
@@ -414,17 +418,28 @@ class MemoryGate(nn.Module):
         self.nodewise = nodewise
         self.out_dim = out_dim
 
-        self.memory = nn.Parameter(torch.empty(memory_size, mem_hid))
+        # self.memory = nn.Parameter(torch.empty(memory_size, mem_hid))
         
-        self.hid_query = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(3)])
-        self.key = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(3)])
-        self.value = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(3)])
+        # self.hid_query = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(3)])
+        # self.key = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(3)])
+        # self.value = nn.ParameterList([nn.Parameter(torch.empty(hidden_size, mem_hid)) for _ in range(3)])
         
-        self.input_query = nn.Parameter(torch.empty(in_dim, mem_hid))
+        # self.input_query = nn.Parameter(torch.empty(in_dim, mem_hid))
 
-        self.We1 = nn.Parameter(torch.empty(num_nodes, memory_size))
-        self.We2 = nn.Parameter(torch.empty(num_nodes, memory_size))
-        self.We3 = nn.Parameter(torch.empty(num_nodes, memory_size))
+        # self.We1 = nn.Parameter(torch.empty(num_nodes, memory_size))
+        # self.We2 = nn.Parameter(torch.empty(num_nodes, memory_size))
+        # self.We3 = nn.Parameter(torch.empty(num_nodes, memory_size))
+
+        self.memory = xavier_param(memory_size, mem_hid)  # M
+
+        self.hid_query = nn.ParameterList([xavier_param(hidden_size, mem_hid) for _ in range(3)])
+        self.key = nn.ParameterList([xavier_param(hidden_size, mem_hid) for _ in range(3)])
+        self.value = nn.ParameterList([xavier_param(hidden_size, mem_hid) for _ in range(3)])
+
+        self.input_query = xavier_param(in_dim, mem_hid)  # W_q
+        self.We1 = xavier_param(num_nodes, memory_size)  # W_E1
+        self.We2 = xavier_param(num_nodes, memory_size)  # W_E2
+        self.We3 = xavier_param(num_nodes, memory_size)
         
         for p in self.parameters():
             if p.dim() > 1:
