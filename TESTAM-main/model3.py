@@ -243,7 +243,7 @@ class TemporalModel(nn.Module):
         - vocab_size: total number of temporal features (e.g., 7 days)
             - Notes: in the trivial traffic forecasting problem, we have total 288 = 24 * 60 / 5 (5 min interval)
     """
-    def __init__(self, hidden_size, num_nodes, layers, dropout, in_dim = 1, out_dim = 1, vocab_size = 288, activation = nn.ReLU(), use_tim=True):
+    def __init__(self, hidden_size, num_nodes, layers, dropout, in_dim = 1, out_dim = 1, vocab_size = 288, activation = nn.ReLU(), use_tim=False):
         super(TemporalModel, self).__init__()
         self.vocab_size = vocab_size
         self.act = activation
@@ -564,7 +564,7 @@ class TESTAM(nn.Module):
         self.prob_mul = prob_mul
         self.num_nodes = num_nodes
         self.supports_len = 1
-        #self.supports_dropout = nn.Dropout(p=dropout)
+        self.supports_dropout = nn.Dropout(p=dropout)
         self.max_time_index = max_time_index
 
         self.identity_expert = TemporalModel(hidden_size, num_nodes, in_dim = in_dim - 1, out_dim = out_dim, layers = layers, dropout = dropout, vocab_size = max_time_index)
