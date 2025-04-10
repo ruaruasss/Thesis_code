@@ -556,12 +556,12 @@ class TESTAM(nn.Module):
 
         #self.identity_expert = TemporalModel(hidden_size, num_nodes, in_dim = in_dim - 1, out_dim = out_dim, layers = layers, dropout = dropout, vocab_size = max_time_index)
         self.adaptive_expert = STModel(hidden_size, self.supports_len, num_nodes, in_dim = in_dim, out_dim = out_dim, layers = layers, dropout = dropout)
-        #self.attention_expert = AttentionModel(hidden_size, in_dim = in_dim, out_dim = out_dim, layers = layers, dropout = dropout)
+        self.attention_expert = AttentionModel(hidden_size, in_dim = in_dim, out_dim = out_dim, layers = layers, dropout = dropout)
 
         self.gate_network = MemoryGate(hidden_size, num_nodes, in_dim = in_dim, out_dim = out_dim)
 
-        #for model in [self.adaptive_expert, self.attention_expert]:
-        for model in [self.adaptive_expert]:
+        #for model in [self.identity_expert, self.attention_expert]:
+        for model in [self.adaptive_expert, self.attention_expert]:
             for n, p in model.named_parameters():
                 if p.dim() > 1:
                     nn.init.xavier_uniform_(p)
@@ -593,21 +593,23 @@ class TESTAM(nn.Module):
 
         _, o_adaptive, h_adaptive = self.adaptive_expert(input, None, new_supports)
 
-        #o_attention, h_attention = self.attention_expert(input, None)
+        o_attention, h_attention = self.attention_expert(input, None)
+        #o_attention, h_attention = self.attention_expert(input, h_future)
 
-        ind_out = torch.stack([o_adaptive], dim = -1)
-        #ind_out = torch.stack([o_adaptive, o_attention], dim = -1)
+        #ind_out = torch.stack([o_adaptive], dim = -1)
+        ind_out = torch.stack([o_attention], dim = -1)
 
         B, N, T, _ = o_adaptive.size()
         #B, N, T, _ = o_attention.size()
-        gate_in = [h_adaptive[-1]]
+        gate_in = [h_adaptive[-1], h_attention]
         #gate_in = [h_adaptive[-1], h_attention]
         gate = torch.softmax(self.gate_network(input.permute(0,2,3,1), gate_in), dim = -1)
         out = torch.zeros_like(o_adaptive).view(-1,1)
         #out = torch.zeros_like(o_attention).view(-1,1)
 
-        #outs = [o_adaptive, o_attention]
-        outs = [o_adaptive]
+        outs = [o_adaptive, o_attention]
+        #outs = [o_adaptive]
+        #outs = [o_attention]
         counts = []
 
         route_prob_max, routes = torch.max(gate, dim = -1)
