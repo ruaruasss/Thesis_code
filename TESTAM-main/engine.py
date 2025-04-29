@@ -1,5 +1,5 @@
 import torch.optim as optim
-from model2 import *
+from model1 import *
 import util
 
 class trainer():
